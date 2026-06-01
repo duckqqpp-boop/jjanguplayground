@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>당신의 공원은?</title>
+
+    <!-- 손글씨 느낌 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Jua&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 배경 낙서 -->
+    <div class="doodle doodle-1">⭐</div>
+    <div class="doodle doodle-2">🍫</div>
+    <div class="doodle doodle-3">🌭</div>
+    <div class="doodle doodle-4">🐶</div>
+    <div class="doodle doodle-5">🎈</div>
+
+    <main class="container">
+
+        <!-- 시작 화면 -->
+        <section id="startScreen" class="screen active">
+
+            <div class="logo-box">
+                <h1>당신의 공원은?</h1>
+
+                <p class="subtitle">
+                    15개의 질문으로 알아보는<br>
+                    나만의 짱구 감성 공원 테스트!
+                </p>
+            </div>
+
+            <div class="warning-box">
+                ⚠️ 매우 진지하지 않은 테스트입니다.
+            </div>
+
+            <button id="startBtn" class="main-btn">
+                테스트 시작하기 🚀
+            </button>
+
+        </section>
+
+        <!-- 질문 화면 -->
+        <section id="quizScreen" class="screen">
+
+            <div class="progress-wrap">
+
+                <div class="progress-text">
+                    <span id="currentQuestion">1</span>
+                    /
+                    <span id="totalQuestion">15</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h2 id="questionTitle">
+                    질문이 표시됩니다.
+                </h2>
+
+                <div class="answer-wrap">
+
+                    <button
+                        id="answerA"
+                        class="answer-btn"
+                    >
+                        답변 A
+                    </button>
+
+                    <button
+                        id="answerB"
+                        class="answer-btn"
+                    >
+                        답변 B
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 분석 중 -->
+        <section id="loadingScreen" class="screen">
+
+            <div class="loading-box">
+
+                <h2>🔍 분석 중...</h2>
+
+                <p>
+                    당신의 공원을 찾고 있어요
+                </p>
+
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 결과 -->
+        <section id="resultScreen" class="screen">
+
+            <div class="result-card">
+
+                <div class="result-badge">
+                    🎉 분석 완료!
+                </div>
+
+                <h3 class="result-title">
+                    당신의 공원은...
+                </h3>
+
+                <h1 id="parkName" class="park-name">
+                    초코비 공원
+                </h1>
+
+                <p id="parkDescription" class="park-description">
+                    결과 설명
+                </p>
+
+                <div class="notice-box">
+                    ※ 해당 그림은 직접 네이버나 구글에 검색해 보세요.
+                </div>
+
+                <hr>
+
+                <div class="share-area">
+
+                    <h4>
+                        친구들에게도 공유해보세요!
+                    </h4>
+
+                    <p>
+                        과연 내 친구들은 어떤 공원이 나올까?
+                    </p>
+
+                    <button
+                        id="shareBtn"
+                        class="main-btn"
+                    >
+                        결과 공유하기 📢
+                    </button>
+
+                </div>
+
+                <button
+                    id="restartBtn"
+                    class="sub-btn"
+                >
+                    다시 테스트하기 🔄
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- 최근 결과 -->
+        <section class="history-section">
+
+            <div class="history-card">
+
+                <h3>
+                    📒 최근 결과
+                </h3>
+
+                <p id="savedResult">
+                    아직 테스트 기록이 없습니다.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
