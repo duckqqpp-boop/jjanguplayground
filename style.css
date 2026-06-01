@@ -1,0 +1,451 @@
+/* =========================
+   기본 설정
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --yellow:#ffe44d;
+    --green:#1f9b44;
+    --green-dark:#147233;
+    --red:#ff6b6b;
+    --white:#ffffff;
+    --black:#222222;
+}
+
+body{
+    background:var(--yellow);
+    color:var(--black);
+    font-family:'Gaegu', cursive;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* =========================
+   낙서 배경
+========================= */
+
+.doodle{
+    position:fixed;
+    font-size:2rem;
+    opacity:.25;
+    pointer-events:none;
+    animation:float 4s ease-in-out infinite;
+}
+
+.doodle-1{
+    top:30px;
+    left:20px;
+}
+
+.doodle-2{
+    top:120px;
+    right:20px;
+}
+
+.doodle-3{
+    bottom:150px;
+    left:15px;
+}
+
+.doodle-4{
+    bottom:100px;
+    right:20px;
+}
+
+.doodle-5{
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* =========================
+   공통 레이아웃
+========================= */
+
+.container{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+    padding:20px;
+}
+
+.screen{
+    display:none;
+    min-height:80vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.screen.active{
+    display:flex;
+}
+
+/* =========================
+   시작 화면
+========================= */
+
+.logo-box{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo-box h1{
+    font-family:'Jua', sans-serif;
+    font-size:3rem;
+    color:var(--green);
+
+    text-shadow:
+        3px 3px 0 white,
+        5px 5px 0 #000;
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:1.4rem;
+    font-weight:bold;
+    line-height:1.5;
+}
+
+.warning-box{
+    background:white;
+    border:4px solid black;
+    border-radius:20px;
+    padding:15px;
+    margin-bottom:25px;
+    font-size:1.2rem;
+    font-weight:bold;
+}
+
+/* =========================
+   버튼
+========================= */
+
+.main-btn{
+    width:100%;
+    border:none;
+    border-radius:20px;
+    padding:18px;
+
+    background:var(--green);
+    color:white;
+
+    font-size:1.3rem;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 6px 0 var(--green-dark);
+
+    transition:.15s;
+}
+
+.main-btn:active{
+    transform:translateY(5px);
+    box-shadow:0 1px 0 var(--green-dark);
+}
+
+.sub-btn{
+    width:100%;
+    margin-top:15px;
+
+    border:none;
+    border-radius:20px;
+
+    padding:15px;
+
+    background:white;
+
+    font-size:1.1rem;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* =========================
+   진행바
+========================= */
+
+.progress-wrap{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.progress-text{
+    text-align:right;
+    font-size:1.2rem;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:20px;
+
+    border:3px solid black;
+    border-radius:999px;
+
+    background:white;
+    overflow:hidden;
+}
+
+#progressFill{
+    width:0%;
+    height:100%;
+
+    background:var(--green);
+
+    transition:.4s;
+}
+
+/* =========================
+   질문 카드
+========================= */
+
+.question-card{
+    width:100%;
+    background:white;
+
+    border:5px solid black;
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:8px 8px 0 black;
+}
+
+.question-card h2{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
+    line-height:1.4;
+}
+
+.answer-wrap{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.answer-btn{
+    width:100%;
+
+    border:3px solid black;
+    border-radius:20px;
+
+    background:#fff6cf;
+
+    padding:18px;
+
+    font-size:1.2rem;
+    font-family:'Gaegu', cursive;
+    font-weight:bold;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.answer-btn:hover{
+    transform:scale(1.02);
+}
+
+.answer-btn:active{
+    transform:scale(.97);
+}
+
+/* =========================
+   로딩
+========================= */
+
+.loading-box{
+    text-align:center;
+}
+
+.loading-box h2{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+.loading-box p{
+    font-size:1.3rem;
+}
+
+.loading-dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+.loading-dots span{
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+    background:black;
+
+    animation:bounce 1s infinite;
+}
+
+.loading-dots span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.loading-dots span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+/* =========================
+   결과 카드
+========================= */
+
+.result-card{
+    width:100%;
+
+    background:white;
+
+    border:5px solid black;
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:8px 8px 0 black;
+}
+
+.result-badge{
+    display:inline-block;
+
+    background:#ffb84d;
+
+    border:3px solid black;
+    border-radius:999px;
+
+    padding:8px 15px;
+
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.result-title{
+    font-size:1.5rem;
+    margin-bottom:10px;
+}
+
+.park-name{
+    color:var(--green);
+    font-family:'Jua', sans-serif;
+
+    font-size:2.2rem;
+    line-height:1.3;
+
+    margin-bottom:20px;
+}
+
+.park-description{
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.notice-box{
+    background:#fff6cf;
+
+    border:3px dashed black;
+    border-radius:15px;
+
+    padding:12px;
+    margin-bottom:20px;
+
+    font-size:1rem;
+}
+
+.share-area{
+    text-align:center;
+    margin:20px 0;
+}
+
+.share-area h4{
+    font-size:1.5rem;
+    margin-bottom:10px;
+}
+
+.share-area p{
+    margin-bottom:15px;
+}
+
+/* =========================
+   최근 결과
+========================= */
+
+.history-section{
+    margin-top:25px;
+    margin-bottom:50px;
+}
+
+.history-card{
+    background:white;
+
+    border:4px solid black;
+    border-radius:20px;
+
+    padding:20px;
+}
+
+.history-card h3{
+    margin-bottom:10px;
+}
+
+#savedResult{
+    font-size:1.1rem;
+}
+
+/* =========================
+   모바일 최적화
+========================= */
+
+@media(max-width:480px){
+
+    .logo-box h1{
+        font-size:2.5rem;
+    }
+
+    .question-card h2{
+        font-size:1.7rem;
+    }
+
+    .park-name{
+        font-size:1.8rem;
+    }
+
+    .answer-btn{
+        font-size:1.1rem;
+    }
+}
